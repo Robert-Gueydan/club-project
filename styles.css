@@ -1,0 +1,36 @@
+.grid-container {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+            "nav nav"
+            "head head"
+            "inst-1 inst-2"
+            "recipe recipe"
+            "footer footer";
+}
+
+.navbar {
+    grid-area: nav;
+}
+
+.header {
+    grid-area: head;
+}
+
+.instruction-1 {
+    grid-area: inst-1
+}
+
+.instruction-2 {
+    grid-area: inst-2
+}
+
+.recipe {
+ grid-area: recipe;
+}
+
+.footer {
+    grid-area: footer;
+}
