@@ -1,36 +1,196 @@
+
+html, body {
+    max-width: 1920px;
+    margin: 0 auto;
+    background-color: #efe7e1;
+}
+
+a {
+    text-decoration: none;
+}
+
+h3 {
+    color: #efe7e1;
+    background-color: #50382a;
+    margin: 0;
+    padding: 10px 0 15px 0;
+    font-size: 2rem;
+}
+
+
+
+/* Grid Layout */
 .grid-container {
     display: grid;
-    grid-gap: 1em;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: 
-            "nav nav"
-            "head head"
-            "inst-1 inst-2"
-            "recipe recipe"
-            "footer footer";
+    gap: 5px;
+    grid-template-columns: 33.33% 16.665% 16.665% 33.33%;
+    grid-template-rows: 80px 62px 20% 36.66% 30.00% 5.33%;
+    /* grid-template-rows: 80px 40px 300px 500px 500px 80px;  */
+    grid-gap: 5px;
+    grid-template-areas:
+        "logo logo logo logo"
+        "top-nav top-nav top-nav top-nav"
+        "hero hero hero hero"
+        "instruction-1 instruction-1 instruction-2 instruction-2"
+        "recipe-1 recipe-2 recipe-2 recipe-3"
+        "footer footer footer footer"
+}
+.logo {
+    grid-area: logo;
+}
+.top-nav {
+    grid-area: top-nav;
 }
 
-.navbar {
-    grid-area: nav;
-}
-
-.header {
-    grid-area: head;
+.hero {
+    grid-area: hero;
+    
 }
 
 .instruction-1 {
-    grid-area: inst-1
+    grid-area: instruction-1;
+    
 }
 
 .instruction-2 {
-    grid-area: inst-2
+    grid-area: instruction-2;
+    
 }
 
-.recipe {
- grid-area: recipe;
+.recipe-1 {
+ grid-area: recipe-1;
+ 
 }
+
+.recipe-2 {
+    grid-area: recipe-2;
+    
+   }
+
+.recipe-3 {
+    grid-area: recipe-3;
+   
+   }
 
 .footer {
     grid-area: footer;
+
+}
+
+/* Flex container */
+
+.flex-container {
+    display: flex;
+}
+/* Logo */
+.logo {
+    justify-content: center;
+}
+
+/* top-nav */
+
+.top-nav{
+    margin: 0 10%;
+    justify-content: space-between;
+}
+
+.hero {
+    max-width: 100%;
+    background: no-repeat center url("/images/bread-on-wood-hero-2000.jpg");
+}
+
+.hero img {
+    max-width: 1500px;
+}
+
+/* instructions */
+.instructions {
+    margin: auto;
+    overflow: hidden;
+    margin: 0;
+    flex-direction: column;
+    text-align: center;
+}
+.instructions img {
+    max-width: 100%;
+    margin: 0;
+}
+
+/* Recipe */
+.recipes {
+    margin: auto;
+    overflow: hidden;
+    margin: 0;
+    flex-direction: column;
+    text-align: center;
+}
+
+.recipes img {
+    max-width: 100%;
+    margin: 0;
+}
+
+/* footer */
+
+footer{
+    background-color: #50382a;
+    color: #efe7e1;
+    justify-content: space-around;
+}
+
+.footer-flex {
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+footer a {
+    color: #efe7e1;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width:1200px) {
+    .grid-container {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 80px 60px 300px 300px 300px 400px 80px;
+    grid-template-areas:
+        "logo logo"
+        "top-nav top-nav"
+        "hero hero"
+        "instruction-1 instruction-2"
+        "recipe-1 recipe-2"
+        "recipe-3 recipe-3"
+        "footer footer"
+    }
+    /* recipes {
+        height: 500px;
+    } */
+}
+
+@media screen and (max-width: 735px) {
+    .grid-container {
+    grid-template-columns: 100%;
+    grid-template-rows: 80px 60px 300px 300px 300px 300px 300px 300px 80px;
+    grid-template-areas:
+        "logo"
+        "top-nav"
+        "hero"
+        "instruction-1"
+        "instruction-2"
+        "recipe-1"
+        "recipe-2"
+        "recipe-3"
+        "footer"
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    img {
+        
+        width: 100%;
+        height: auto;
+        overflow: auto;
+    }
 }

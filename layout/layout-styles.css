@@ -1,17 +1,21 @@
 .container {
     display: grid;
     grid-template-columns: 4fr 2fr 2fr 4fr;
-    grid-template-rows: 2fr 3fr 3fr 3fr 1fr;
+    grid-template-rows: 1fr 1fr 3fr 3fr 3fr 1fr;
     grid-gap: 3px;
     grid-template-areas:
+        "logo logo logo logo"
         "nav nav nav nav"
         "header header header header"
         "content-1 content-1 content-2 content-2"
         "content-3 content-4 content-4 content-5"
         "footer footer footer footer"
 }
+.logo {
+    grid-area: logo;
+}
 
- .nav {
+.nav {
      grid-area: nav;
     /* grid-column: 1 / 5; */
 }
