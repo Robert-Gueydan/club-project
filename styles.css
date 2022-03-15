@@ -9,12 +9,32 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
+h1,
+h2 {
+    font-family: "Gloria Hallelujah";
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+p,
+a {
+    font-family: oxygen;
+}
+
 h3 {
-    color: #efe7e1;
-    background-color: #50382a;
+    font-family: Ultra;
+    background-color: transparent;
     margin: 0;
     padding: 10px 0 15px 0;
     font-size: 2rem;
+    color:#efe7e1;
+    background-color: #50382a;
+    letter-spacing: 2px;
+    font-weight: 300;
 }
 
 
@@ -24,9 +44,7 @@ h3 {
     display: grid;
     gap: 5px;
     grid-template-columns: 33.33% 16.665% 16.665% 33.33%;
-    grid-template-rows: 80px 62px 20% 36.66% 30.00% 5.33%;
-    /* grid-template-rows: 80px 40px 300px 500px 500px 80px;  */
-    grid-gap: 5px;
+    grid-template-rows: 125px 62px 20% 36.66% 30.00% 5.33%;
     grid-template-areas:
         "logo logo logo logo"
         "top-nav top-nav top-nav top-nav"
@@ -82,11 +100,28 @@ h3 {
 .flex-container {
     display: flex;
 }
+
 /* Logo */
 .logo {
     justify-content: center;
 }
 
+@media screen and (max-width: 375px) {
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Hero */
+.hero {
+    max-width: 100%;
+    background: no-repeat center url("images/bread-on-wood-hero-2000.jpg");
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin: 10px 20px;
+}
 /* top-nav */
 
 .top-nav{
@@ -94,13 +129,32 @@ h3 {
     justify-content: space-between;
 }
 
-.hero {
-    max-width: 100%;
-    background: no-repeat center url("/images/bread-on-wood-hero-2000.jpg");
+.top-nav a {
+    color: #50382a;
+    font-size: 1.2rem;
+    margin-right: 10px;
 }
 
-.hero img {
-    max-width: 1500px;
+.mobile-top-nav {
+    display: none;
+}
+
+.mobile-top-nav {
+    flex-direction: column;
+}
+
+@media screen and (max-width:600px) {
+    .top-nav {
+        display: none;
+        
+    }
+    .mobile-top-nav {
+        margin: auto;
+        display: flex;
+    }
+    .mobile-top-nav div {
+        margin-bottom: 10px;
+    }
 }
 
 /* instructions */
@@ -111,6 +165,23 @@ h3 {
     flex-direction: column;
     text-align: center;
 }
+
+.instructions:hover,
+.instructions:active {
+    border: 5px solid #50382a;
+}
+
+.instructions:hover h3,
+.instructions:active h3 {
+    color: #50382a;
+    background-color: #efe7e1
+}
+
+.instructions:hover img,
+.instructions:active img {
+    max-width: 99%;
+}
+
 .instructions img {
     max-width: 100%;
     margin: 0;
@@ -128,6 +199,22 @@ h3 {
 .recipes img {
     max-width: 100%;
     margin: 0;
+}
+
+.recipes:hover,
+.recipes:active {
+    border: 5px solid #50382a;
+}
+
+.recipes:hover h3,
+.recipes:active h3 {
+    color: #50382a;
+    background-color: #efe7e1
+}
+
+.recipes:hover img,
+.recipes:active img {
+    max-width: 99%;
 }
 
 /* footer */
@@ -154,7 +241,7 @@ footer a:hover {
 @media screen and (max-width:1200px) {
     .grid-container {
     grid-template-columns: 50% 50%;
-    grid-template-rows: 80px 60px 300px 300px 300px 400px 80px;
+    grid-template-rows: 125px 60px 300px 300px 300px 400px 80px;
     grid-template-areas:
         "logo logo"
         "top-nav top-nav"
@@ -164,15 +251,12 @@ footer a:hover {
         "recipe-3 recipe-3"
         "footer footer"
     }
-    /* recipes {
-        height: 500px;
-    } */
 }
 
 @media screen and (max-width: 735px) {
     .grid-container {
     grid-template-columns: 100%;
-    grid-template-rows: 80px 60px 300px 300px 300px 300px 300px 300px 80px;
+    grid-template-rows: 125px 60px 300px 300px 300px 300px 300px 300px 80px;
     grid-template-areas:
         "logo"
         "top-nav"
