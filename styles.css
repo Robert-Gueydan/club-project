@@ -118,7 +118,9 @@ h3 {
 
 .hero h2 {
     font-size: 3rem;
-    margin: 10px 20px;
+    margin: 0;
+    letter-spacing: 2.5px;
+    line-height: 100px;
 }
 /* top-nav */
 
